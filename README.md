@@ -10,3 +10,8 @@
 
 [`Geolocation.clearWatch()`](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch)
 - Removes the particular handler previously installed using `watchPosition()`.
+
+### Practical Usage
+1. Show the user's position on a map
+2. Up-to-date local information
+3. Location-tagged status updates in social networking applications
