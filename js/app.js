@@ -1,7 +1,7 @@
 const findLocation = document.getElementById('findLocation');
 // we are getting the id of where we want display the info to the user.
 const output = document.getElementById("out");
-const stopButton = document.getElementById("stopButton");
+const trackButton = document.getElementById("trackButton");
 
 /* With the id we got for the button we invoke
 this function when the button is clicked. */
@@ -10,8 +10,9 @@ findLocation.onclick = (e) => {
     geoFindMe()
 }
 
-stopButton.onclick = (e) => {
-
+let watch = true;
+trackButton.onclick = (e) => {
+    checkMovement()
 }
 
 /*
@@ -45,5 +46,15 @@ function checkMovement() {
     let success = (position) => {
         console.log(position)
     }
-    navigator.geolocation.watchPosition(success)
+    if (watch) {
+        console.log('We started tracking you...');
+        let watchId = navigator.geolocation.watchPosition(success);
+        watch = false;
+    }
+    else {
+        console.log('We stopped tracking you...')
+        navigator.geolocation.clearWatch(watchId)
+        watch = true
+    }
+
 }
