@@ -1,6 +1,7 @@
 const findLocation = document.getElementById('findLocation');
 // we are getting the id of where we want display the info to the user.
 const output = document.getElementById("out");
+const track = document.getElementById("track");
 const trackButton = document.getElementById("trackButton");
 
 /* With the id we got for the button we invoke
@@ -29,6 +30,7 @@ function geoFindMe() {
       let latitude  = position.coords.latitude;
       let longitude = position.coords.longitude;
       output.innerHTML =  `
+      <h4>You are currently located at: </h4>
       <p>Latitude: ${latitude}
       </br>
       Longitude: ${longitude}</p>`;
@@ -44,16 +46,23 @@ function geoFindMe() {
 
 function checkMovement() {
     let success = (position) => {
-        console.log(position)
+        let latitude  = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        track.innerHTML = `Tracking you...`;
+        track.innerHTML =  `
+        <p>Latitude: ${latitude}
+        </br>
+        Longitude: ${longitude}</p>`;
     }
     if (watch) {
-        console.log('We started tracking you...');
-        let watchId = navigator.geolocation.watchPosition(success);
+        var watchId = navigator.geolocation.watchPosition(success);
+        console.log(watchId)
+        // navigator.geolocation.watchPosition(success);
         watch = false;
     }
     else {
-        console.log('We stopped tracking you...')
         navigator.geolocation.clearWatch(watchId)
+        track.innerHTML = `We have stopped tracking you...`
         watch = true
     }
 
