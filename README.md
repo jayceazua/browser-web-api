@@ -1,5 +1,6 @@
 # Browser Web API Project
 </hr>
+
 ## Geolocation API
 
 
