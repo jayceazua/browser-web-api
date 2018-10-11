@@ -2,6 +2,7 @@
 </hr>
 ## [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)
 
+
 <img src="https://github.com/jayceazua/browser-web-api/blob/master/geolocation.jpg"/>
 
 ### Features
