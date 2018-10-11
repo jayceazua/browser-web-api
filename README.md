@@ -1,6 +1,6 @@
 # Browser Web API Project
 </hr>
-## [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)
+## Geolocation API
 
 
 <img src="https://github.com/jayceazua/browser-web-api/blob/master/geolocation.jpg"/>
